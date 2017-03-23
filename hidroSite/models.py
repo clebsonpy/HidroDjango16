@@ -4,22 +4,32 @@ from django.db import models
 class TipoDados(models.Model):
     tipoDadosID = models.AutoField(primary_key=True, null=False)
     tipoDados = models.CharField(max_length=25, null=False)
+    def __str__(self):
+        return self.tipoDados
 
 class Reducao(models.Model):
     reducaoID = models.AutoField(primary_key=True, null=False)
     tipoReducao = models.CharField(max_length=20, null=False)
+    def __str__(self):
+        return self.tipoReducao
 
 class TesteAderencia(models.Model):
     testeAderenciaID = models.AutoField(primary_key=True, null=False)
     tipoTeste = models.CharField(max_length=50, null=False)
+    def __str__(self):
+        return self.tipoTeste
 
 class Estimadores(models.Model):
     estimadorID = models.AutoField(primary_key=True, null=False)
     metodo = models.CharField(max_length=50, null=False)
+    def __str__(self):
+        return self.metodo
 
 class Distribuicoes(models.Model):
     distribuicaoID = models.AutoField(primary_key=True, null=False)
     distribuicao = models.CharField(max_length=50, null=False)
+    def __str__(self):
+        return self.distribuicao
 
 class SerieExtensa(models.Model):
     serieExtensaID = models.AutoField(primary_key=True, null=False)
